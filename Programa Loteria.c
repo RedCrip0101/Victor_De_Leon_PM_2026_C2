@@ -4,15 +4,7 @@
 /* Loteria.
    El programa simula jugadas de loteria. El usuario elige un numero del 1 al 40
    y una cantidad de dinero. El programa genera un numero ganador al azar.
-   Si el usuario acierta, el premio es la cantidad jugada multiplicada por 1000.
-
-   Variables:
-   OPC       : opcion del menu (entero).
-   NJUG      : numero de jugadas disponibles (entero).
-   JUGADAS   : arreglo que almacena los numeros jugados (entero).
-   MONTOS    : arreglo que almacena los montos jugados (flotante).
-   NGAN      : numero ganador generado al azar (entero).
-   I         : contador del ciclo (entero).               */
+   Si el usuario acierta, el premio es la cantidad jugada multiplicada por 1000.*/
 
 const int MAX = 100;
 
@@ -25,7 +17,7 @@ void main(void)
     int JUGADAS[MAX];
     float MONTOS[MAX];
 
-    srand(time(NULL));    /* Se inicializa la semilla para rand(). */
+    srand(time(NULL));    
 
     do
     {
@@ -71,8 +63,7 @@ void main(void)
 }
 
 void RealizarJugadas(int JUG[], float MON[], int N)
-/* La funcion solicita al usuario el numero y monto de cada jugada.
-   Los numeros deben estar entre 1 y 40. */
+
 {
     int I;
 
@@ -92,13 +83,12 @@ void RealizarJugadas(int JUG[], float MON[], int N)
 }
 
 void MostrarResultados(int JUG[], float MON[], int N)
-/* La funcion genera el numero ganador con rand(), compara con las jugadas
-   del usuario e imprime los resultados. El premio es el monto por 1000. */
+
 {
     int I, NGAN;
     float PREMIO;
 
-    NGAN = (rand() % 40) + 1;    /* Numero ganador: valor entre 1 y 40. */
+    NGAN = (rand() % 40) + 1;    
 
     printf("\n\n--- RESULTADO ---");
     printf("\nNumero ganador: %d\n", NGAN);
