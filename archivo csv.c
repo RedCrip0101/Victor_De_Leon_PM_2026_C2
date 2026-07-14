@@ -3,9 +3,8 @@
 #include <string.h>
 
 /* Alumnos desde CSV.
-El programa lee un archivo CSV que contiene una cantidad n de alumnos
-(la primera linea es el encabezado). Primero determina cuantas lineas
-de datos hay, despues reserva memoria dinamica del tamano exacto para
+El programa lee un archivo CSV que contiene una cantidad n de alumnos.
+Primero determina cuantas lineas de datos hay, despues reserva memoria dinamica del tamano exacto para
 guardarlos y finalmente los imprime en pantalla. */
 
 #define TAM_CAMPO 50
@@ -36,11 +35,9 @@ void main(void)
         return;
     }
 
-    /* Primero se cuenta la cantidad de elementos (sin el encabezado) */
     n = CuentaAlumnos(archivo);
     printf("\nCantidad de alumnos encontrados en el CSV: %d\n", n);
 
-    /* Se reserva la memoria dinamica exacta para esa cantidad */
     lista = (struct alumno *)malloc(n * sizeof(struct alumno));
     if (lista == NULL)
     {
@@ -49,9 +46,8 @@ void main(void)
         return;
     }
 
-    /* Se vuelve al inicio del archivo para leer los datos reales */
     rewind(archivo);
-    fgets(linea, TAM_LINEA, archivo);  /* se descarta el encabezado */
+    fgets(linea, TAM_LINEA, archivo);  
 
     for (i = 0; i < n; i++)
     {
@@ -77,14 +73,12 @@ void main(void)
     free(lista);
 }
 
-/* Cuenta cuantas lineas de datos hay en el archivo (sin el encabezado) */
 int CuentaAlumnos(FILE *archivo)
 {
     char linea[TAM_LINEA];
     int contador = 0;
 
-    fgets(linea, TAM_LINEA, archivo);  /* se descarta el encabezado */
-
+    fgets(linea, TAM_LINEA, archivo);  
     while (fgets(linea, TAM_LINEA, archivo) != NULL)
         if (strlen(linea) > 1)
             contador++;
@@ -92,7 +86,7 @@ int CuentaAlumnos(FILE *archivo)
     return contador;
 }
 
-/* Imprime el arreglo de alumnos ya cargado en memoria */
+
 void Imprime(struct alumno *lista, int n)
 {
     int i;
