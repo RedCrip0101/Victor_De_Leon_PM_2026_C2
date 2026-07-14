@@ -33,11 +33,11 @@ void main(void)
     if (buffer == NULL)
         return;
 
-    /* Primero se cuenta la cantidad de elementos */
+    
     n = CuentaAlumnos(buffer);
     printf("\nCantidad de alumnos encontrados en el XML: %d\n", n);
 
-    /* Se reserva la memoria dinamica exacta para esa cantidad */
+  
     lista = (struct alumno *)malloc(n * sizeof(struct alumno));
     if (lista == NULL)
     {
@@ -46,7 +46,6 @@ void main(void)
         return;
     }
 
-    /* Se recorre de nuevo el archivo, ya cargado en memoria, para llenar cada elemento */
     cursor = buffer;
     for (i = 0; i < n; i++)
     {
@@ -67,7 +66,6 @@ void main(void)
     free(buffer);
 }
 
-/* Carga el contenido completo del archivo en un buffer de memoria */
 char *LeeArchivo(const char *rutaArchivo)
 {
     FILE *archivo;
@@ -101,7 +99,6 @@ char *LeeArchivo(const char *rutaArchivo)
     return buffer;
 }
 
-/* Cuenta cuantas veces aparece la etiqueta <Alumno> en el buffer */
 int CuentaAlumnos(const char *buffer)
 {
     int contador = 0;
@@ -115,9 +112,7 @@ int CuentaAlumnos(const char *buffer)
     return contador;
 }
 
-/* Extrae el texto que esta entre <etiqueta> y </etiqueta>, a partir del
-puntero indicado, y lo copia en destino. Devuelve un puntero a la
-posicion justo despues de la etiqueta de cierre */
+
 char *ExtraeCampo(char *inicio, const char *etiqueta, char *destino)
 {
     char etiquetaApertura[30], etiquetaCierre[30];
@@ -139,7 +134,7 @@ char *ExtraeCampo(char *inicio, const char *etiqueta, char *destino)
     return pFin + strlen(etiquetaCierre);
 }
 
-/* Imprime el arreglo de alumnos ya cargado en memoria */
+
 void Imprime(struct alumno *lista, int n)
 {
     int i;
