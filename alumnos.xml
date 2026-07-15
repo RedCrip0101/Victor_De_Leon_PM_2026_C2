@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alumnos>
+    <Alumno>
+        <Nombre>Victor</Nombre>
+        <Apellido>De Leon</Apellido>
+        <Promedio>92.5</Promedio>
+        <Materia>Programacion</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Maria</Nombre>
+        <Apellido>Ramirez</Apellido>
+        <Promedio>88.0</Promedio>
+        <Materia>Calculo</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Jose</Nombre>
+        <Apellido>Fernandez</Apellido>
+        <Promedio>75.3</Promedio>
+        <Materia>Fisica</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Ana</Nombre>
+        <Apellido>Gomez</Apellido>
+        <Promedio>95.8</Promedio>
+        <Materia>Dibujo Tecnico</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Carlos</Nombre>
+        <Apellido>Perez</Apellido>
+        <Promedio>68.4</Promedio>
+        <Materia>Algebra Lineal</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Luisa</Nombre>
+        <Apellido>Martinez</Apellido>
+        <Promedio>81.2</Promedio>
+        <Materia>Programacion</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Pedro</Nombre>
+        <Apellido>Sanchez</Apellido>
+        <Promedio>90.0</Promedio>
+        <Materia>Circuitos Electricos</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Sofia</Nombre>
+        <Apellido>Diaz</Apellido>
+        <Promedio>77.6</Promedio>
+        <Materia>Fisica</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Miguel</Nombre>
+        <Apellido>Castillo</Apellido>
+        <Promedio>84.9</Promedio>
+        <Materia>Calculo</Materia>
+    </Alumno>
+    <Alumno>
+        <Nombre>Elena</Nombre>
+        <Apellido>Rodriguez</Apellido>
+        <Promedio>99.1</Promedio>
+        <Materia>Automatizacion</Materia>
+    </Alumno>
+</Alumnos>

@@ -1,0 +1,14 @@
+{
+    "alumnos": [
+        { "nombre": "Victor", "apellido": "De Leon", "promedio": 92.5, "materia": "Programacion" },
+        { "nombre": "Maria", "apellido": "Ramirez", "promedio": 88.0, "materia": "Calculo" },
+        { "nombre": "Jose", "apellido": "Fernandez", "promedio": 75.3, "materia": "Fisica" },
+        { "nombre": "Ana", "apellido": "Gomez", "promedio": 95.8, "materia": "Dibujo Tecnico" },
+        { "nombre": "Carlos", "apellido": "Perez", "promedio": 68.4, "materia": "Algebra Lineal" },
+        { "nombre": "Luisa", "apellido": "Martinez", "promedio": 81.2, "materia": "Programacion" },
+        { "nombre": "Pedro", "apellido": "Sanchez", "promedio": 90.0, "materia": "Circuitos Electricos" },
+        { "nombre": "Sofia", "apellido": "Diaz", "promedio": 77.6, "materia": "Fisica" },
+        { "nombre": "Miguel", "apellido": "Castillo", "promedio": 84.9, "materia": "Calculo" },
+        { "nombre": "Elena", "apellido": "Rodriguez", "promedio": 99.1, "materia": "Automatizacion" }
+    ]
+}
