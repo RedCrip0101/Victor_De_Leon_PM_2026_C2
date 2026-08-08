@@ -15,8 +15,8 @@
    LOGICA DE CALCULO
    ----------------------------------------------------------------
    Costos FIJOS anuales (no dependen de cuanto manejes ese dia, pero
-   se reparten entre los km que se recorren en el año):
-       - Depreciacion anual   = costoInicial / vidaUtilAnios (años)
+   se reparten entre los km que se recorren en el aÃ±o):
+       - Depreciacion anual   = costoInicial / vidaUtilAnios (aÃ±os)
        - Mantenimiento anual  (dato de entrada)
        - Seguro anual         (dato de entrada)
        - Imprevistos anual    (dato de entrada: reparaciones no
@@ -52,15 +52,15 @@
 typedef struct {
     char  nombre[MAX_NOMBRE];        /* Identificador: marca/modelo/placa   */
     float costoInicial;              /* Costo de compra del vehiculo (RD$)  */
-    int   vidaUtilAnios;             /* Años de vida útil (para depreciar)  */
+    int   vidaUtilAnios;             /* AÃ±os de vida Ãºtil (para depreciar)  */
     float gastoMantAnual;            /* Gasto de mantenimiento anual (RD$)  */
     float seguroAnual;               /* Costo del seguro anual (RD$)        */
     float costoJuegoNeumaticos;      /* Costo de un juego de 4 gomas (RD$)  */
     int   vidaUtilNeumaticosKm;      /* Km que dura un juego de gomas       */
     float consumoCiudad;             /* Km recorridos por litro en ciudad   */
     float consumoAutopista;          /* Km recorridos por litro en autopista*/
-    float kmAnualesCiudad;           /* Km promedio recorridos/año, ciudad  */
-    float kmAnualesAutopista;        /* Km promedio recorridos/año, aut.    */
+    float kmAnualesCiudad;           /* Km promedio recorridos/aÃ±o, ciudad  */
+    float kmAnualesAutopista;        /* Km promedio recorridos/aÃ±o, aut.    */
     float imprevistosAnual;          /* Presupuesto anual para imprevistos  */
                                       /* (reparaciones no planificadas,     */
                                       /* multas, remolque, etc.)            */
@@ -217,7 +217,7 @@ void listarVehiculos(Vehiculo *lista, int n) {
         printf("No hay vehiculos registrados todavia.\n");
         return;
     }
-    printf("\n%-20s %12s %10s\n", "NOMBRE", "COSTO", "VIDA(años)");
+    printf("\n%-20s %12s %10s\n", "NOMBRE", "COSTO", "VIDA(aÃ±os)");
     printf("----------------------------------------------------\n");
     for (i = 0; i < n; i++) {
         printf("%-20s %12.2f %10d\n",
@@ -300,7 +300,7 @@ void crearVehiculo(void) {
 
     printf("Costo de compra (RD$): ");
     scanf("%f", &nuevo.costoInicial);
-    printf("Vida útil (años): ");
+    printf("Vida Ãºtil (aÃ±os): ");
     scanf("%d", &nuevo.vidaUtilAnios);
     printf("Gasto de mantenimiento ANUAL estimado (RD$): ");
     scanf("%f", &nuevo.gastoMantAnual);
@@ -308,15 +308,15 @@ void crearVehiculo(void) {
     scanf("%f", &nuevo.seguroAnual);
     printf("Costo de un juego de neumaticos (RD$): ");
     scanf("%f", &nuevo.costoJuegoNeumaticos);
-    printf("Vida útil de los neumáticos (km): ");
+    printf("Vida Ãºtil de los neumÃ¡ticos (km): ");
     scanf("%d", &nuevo.vidaUtilNeumaticosKm);
     printf("Consumo en CIUDAD (km recorridos por galon): ");
     scanf("%f", &nuevo.consumoCiudad);
     printf("Consumo en AUTOPISTA (km recorridos por galon): ");
     scanf("%f", &nuevo.consumoAutopista);
-    printf("Km promedio recorridos POR AÑO en ciudad: ");
+    printf("Km promedio recorridos POR AÃ‘O en ciudad: ");
     scanf("%f", &nuevo.kmAnualesCiudad);
-    printf("Km promedio recorridos POR AÑO en autopista: ");
+    printf("Km promedio recorridos POR AÃ‘O en autopista: ");
     scanf("%f", &nuevo.kmAnualesAutopista);
     printf("Presupuesto ANUAL para imprevistos (reparaciones\n");
     printf("  inesperadas, multas, remolque, etc.) (RD$): ");
@@ -402,11 +402,11 @@ void modificarVehiculo(void) {
     do {
         printf("\n--- MODIFICAR '%s' ---\n", lista[idx].nombre);
         printf("1. Costo de compra (actual: %.2f)\n", lista[idx].costoInicial);
-        printf("2. Vida útil en años (actual: %d)\n", lista[idx].vidaUtilAnios);
+        printf("2. Vida Ãºtil en aÃ±os (actual: %d)\n", lista[idx].vidaUtilAnios);
         printf("3. Mantenimiento anual (actual: %.2f)\n", lista[idx].gastoMantAnual);
         printf("4. Seguro anual (actual: %.2f)\n", lista[idx].seguroAnual);
         printf("5. Costo juego de neumaticos (actual: %.2f)\n", lista[idx].costoJuegoNeumaticos);
-        printf("6. Vida útil neumáticos en km (actual: %d)\n", lista[idx].vidaUtilNeumaticosKm);
+        printf("6. Vida Ãºtil neumÃ¡ticos en km (actual: %d)\n", lista[idx].vidaUtilNeumaticosKm);
         printf("7. Consumo en ciudad, km/galon (actual: %.2f)\n", lista[idx].consumoCiudad);
         printf("8. Consumo en autopista, km/galon (actual: %.2f)\n", lista[idx].consumoAutopista);
         printf("9. Km anuales en ciudad (actual: %.2f)\n", lista[idx].kmAnualesCiudad);
@@ -418,11 +418,11 @@ void modificarVehiculo(void) {
 
         switch (opcion) {
             case 1: printf("Nuevo costo: "); scanf("%f", &lista[idx].costoInicial); break;
-            case 2: printf("Nueva vida útil (años): "); scanf("%d", &lista[idx].vidaUtilAnios); break;
+            case 2: printf("Nueva vida Ãºtil (aÃ±os): "); scanf("%d", &lista[idx].vidaUtilAnios); break;
             case 3: printf("Nuevo mantenimiento anual: "); scanf("%f", &lista[idx].gastoMantAnual); break;
             case 4: printf("Nuevo seguro anual: "); scanf("%f", &lista[idx].seguroAnual); break;
             case 5: printf("Nuevo costo de neumaticos: "); scanf("%f", &lista[idx].costoJuegoNeumaticos); break;
-            case 6: printf("Nueva vida útil de neumáticos (km): "); scanf("%d", &lista[idx].vidaUtilNeumaticosKm); break;
+            case 6: printf("Nueva vida Ãºtil de neumÃ¡ticos (km): "); scanf("%d", &lista[idx].vidaUtilNeumaticosKm); break;
             case 7: printf("Nuevo consumo en ciudad: "); scanf("%f", &lista[idx].consumoCiudad); break;
             case 8: printf("Nuevo consumo en autopista: "); scanf("%f", &lista[idx].consumoAutopista); break;
             case 9: printf("Nuevos km anuales en ciudad: "); scanf("%f", &lista[idx].kmAnualesCiudad); break;
@@ -456,12 +456,12 @@ void calcularDesglose(Vehiculo v, float precioCombustible, DesgloseCosto *d) {
     if (kmAnualesTotales <= 0) kmAnualesTotales = 1; /* evita division entre 0 */
 
     /* --- 1. Amortizacion / depreciacion: el vehiculo pierde valor cada
-       año independientemente de cuanto se use; se reparte entre los km
-       que se recorren en promedio al año --- */
+       aÃ±o independientemente de cuanto se use; se reparte entre los km
+       que se recorren en promedio al aÃ±o --- */
     d->depreciacionPorKm = (v.costoInicial / v.vidaUtilAnios) / kmAnualesTotales;
 
     /* --- 2. Mantenimiento y seguro: gastos fijos anuales, tambien se
-       reparten entre el total de km recorridos al año --- */
+       reparten entre el total de km recorridos al aÃ±o --- */
     d->mantenimientoPorKm = v.gastoMantAnual / kmAnualesTotales;
     d->seguroPorKm        = v.seguroAnual    / kmAnualesTotales;
 
@@ -474,7 +474,7 @@ void calcularDesglose(Vehiculo v, float precioCombustible, DesgloseCosto *d) {
 
     /* --- Imprevistos: presupuesto anual para lo que no se puede
        predecir (una reparacion inesperada, una multa, un remolque).
-       Se trata igual que el mantenimiento: es un gasto fijo del año
+       Se trata igual que el mantenimiento: es un gasto fijo del aÃ±o
        que se reparte entre los km recorridos --- */
     d->imprevistosPorKm = v.imprevistosAnual / kmAnualesTotales;
 
