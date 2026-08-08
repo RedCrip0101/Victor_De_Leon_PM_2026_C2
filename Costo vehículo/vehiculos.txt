@@ -1,0 +1,14 @@
+Vehiculo: Toyota Corolla 2020
+Costo: 1200000.00
+VidaUtilAnios: 10
+GastoMantAnual: 25000.00
+SeguroAnual: 18000.00
+CostoNeumaticos: 15000.00
+VidaUtilNeumaticosKm: 50000
+ConsumoCiudad: 35.00
+ConsumoAutopista: 45.00
+KmAnualesCiudad: 8000.00
+KmAnualesAutopista: 12000.00
+ImprevistosAnual: 12000.00
+---
+
